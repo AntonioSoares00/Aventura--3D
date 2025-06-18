@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
+using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -28,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject miraMachado;
     [SerializeField] private int forcaArremeco;
     private SistemaInterativo sInterativo;
+    [SerializeField] private CinemachineCamera cineCamera;
 
     public object ForcaMode { get; private set; }
 
@@ -50,9 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (sVida.EstaVivo())
         {
-            Andar();
-            Girar();
-            Pular();
+            
             Correr();
             //Atacar();
             Machado();
@@ -60,6 +60,24 @@ public class PlayerMovement : MonoBehaviour
         else if (!sVida.EstaVivo() && morrer)
         {
             Morrer();
+        }
+    }
+
+    void FixedUpdate()
+    {
+       Andar();
+       Girar();
+       Pular();
+    }
+
+    private void ProcuraRefarencias()
+    {
+        
+        if(cineCamera == null )
+        {
+            transform.position = GameObject.Find("StartPoint").transform.position;
+            cineCamera = GameObject.Find("CinemachineCamera").GetComponent<CinemachineCamera>();
+            cineCamera.Follow = this.gameObject.transform;
         }
     }
 
