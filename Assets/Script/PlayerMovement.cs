@@ -61,13 +61,15 @@ public class PlayerMovement : MonoBehaviour
         {
             Morrer();
         }
+
+       Andar();
+       Girar();
+       Pular();
     }
 
     void FixedUpdate()
     {
-       Andar();
-       Girar();
-       Pular();
+       
     }
 
     private void ProcuraRefarencias()
