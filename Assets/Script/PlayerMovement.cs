@@ -18,9 +18,9 @@ public class PlayerMovement : MonoBehaviour
     private bool morrer = true;
     private SistemaDeVida sVida;
     private Vector3 anguloRotacao = new Vector3(0, 90, 0);
-    private bool temChave = false;
+    private bool temMoeda = false;
     private bool temMana = true;
-    private int numeroChave = 0;
+    private int numeroMoeda = 0;
     [SerializeField] private float velocidadeAndar;
     [SerializeField] private float velocidadeCorrer;
     [SerializeField] private float forcaPulo;
@@ -286,13 +286,7 @@ public class PlayerMovement : MonoBehaviour
                 other.gameObject.GetComponent<Porta>().AbrirPorta();
             }
         }
-        //else if (other.gameObject.CompareTag("Chave") && Input.GetKey(KeyCode.E)) ;
-        //{
-        //    Pegar();
-        //    temChave = true;
-        //    numeroChave = other.gameObject.GetComponent<Chave>().NumeroPorta();
-        //    other.gameObject.GetComponent<Chave>().PegarChave();
-        //}
+        
 
         if(other.gameObject.CompareTag("Quebra"))
         {
