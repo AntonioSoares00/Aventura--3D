@@ -11,6 +11,9 @@ TagManager:
   - Quebra
   - Fatal
   - Moeda
+  - Item
+  - Mana
+  - Vida
   layers:
   - Default
   - TransparentFX

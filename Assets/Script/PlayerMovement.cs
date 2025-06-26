@@ -271,7 +271,8 @@ public class PlayerMovement : MonoBehaviour
         else if (other.CompareTag("Vida") && Input.GetKey(KeyCode.E))
         {
             Pegar();
-            sVida.CargaVida();
+            sVida.CargaVida(50);
+            Destroy(other.gameObject);
         }
         else if (other.CompareTag("Porta") && Input.GetKey(KeyCode.E))
         {

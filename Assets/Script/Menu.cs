@@ -14,12 +14,27 @@ public class Menu : MonoBehaviour
 
     public void Jogar()
     {
-        SceneManager.LoadScene("Jogo"); 
+        SceneManager.LoadScene("Historia"); 
     }
 
     public void Creditos()
     {
         SceneManager.LoadScene("Creditos");
+    }
+
+    public void Voltar()
+    {
+        SceneManager.LoadScene("MenuInicial");
+    }    
+
+    public void Continuar()
+    {
+        SceneManager.LoadScene("Jogo");
+    }
+
+    public void Historia()
+    {
+        SceneManager.LoadScene("Historia");
     }
 }
 

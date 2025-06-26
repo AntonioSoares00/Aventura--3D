@@ -129,16 +129,16 @@ public class SistemaDeVida : MonoBehaviour
 
     internal void CargaMana(int v)
     {
-        mana += carga;
+        mana += v;
         manaIndicador.value = mana;
         if(mana > 100)
         {
             mana = 100;
-            manaIndicador.value = vida;
+            manaIndicador.value = mana;
         }
     }
 
-    internal void CargaVida()
+    internal void CargaVida(int carga)
     {
         vida += carga;
         vidaIndicador.value = vida;
