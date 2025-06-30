@@ -36,5 +36,10 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene("Historia");
     }
+
+    public void Pausa()
+    {
+        SceneManager.LoadScene("Configuracao");
+    }
 }
 
